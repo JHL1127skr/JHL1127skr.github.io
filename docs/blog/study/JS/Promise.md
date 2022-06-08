@@ -7,7 +7,7 @@
 ### Promise原型上的方法
 - 成功回调：Promise.prototype.then() 
 - 失败回调：Promise.prototype.catch() 
-- 不管成功或者失败：Promise.prototype.finally() 
+- 不管成功或者失败：Promise.prototype.finally()  
 ### Promise方法（all rece allSettled any）
 - 1、Promise.all
 ```js
