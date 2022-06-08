@@ -8,7 +8,7 @@ const navbar = require("./configs/navbar");
 const sidebar = require("./configs/sidebar");
 
 module.exports = {
-    lang: "zh-CN", //语言
+    lang: "zh-CN", //语言 
     title: "小姜的前端记录", //导航栏左侧title
     description: "前端学习总结",
     theme: defaultTheme({
