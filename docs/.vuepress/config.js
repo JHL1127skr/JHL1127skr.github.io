@@ -19,6 +19,8 @@ module.exports = {
         repo: "https://github.com/JHL1127skr", //导航栏右侧GitHub链接
         editLink: false,
         lastUpdated:true,
+        contributorsText:'创建者',
+        lastUpdatedText:'最后一次更新时间'
     }),
     plugins: [
         searchPlugin({
