@@ -4,9 +4,6 @@
 - [Item2用法与技巧](https://lhajh.github.io/mac/2018/04/25/Iterm2-usage-and-skills.html) 
 - [提交commit规范](https://juejin.cn/post/6844903606815064077)
 - [懒人化启动脚本](https://juejin.cn/post/6966889319504183327#heading-10)
-##### github Action +VuePress
-- [GitHub Action](https://juejin.cn/post/6937532951223599141)
-- [GitHub Token](https://sauljwu.github.io/pages/d6f511/#%E7%94%9F%E6%88%90github-token)
 ### 面试题类
 - [刷题](https://fe.ecool.fun/topic-list?tagId=10)
 - [前端面试](https://vue3js.cn/interview)

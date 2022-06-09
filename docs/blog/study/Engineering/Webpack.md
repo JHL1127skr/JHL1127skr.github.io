@@ -180,7 +180,11 @@ plugins:[
 ]
 ```
 #### 1.4.4 图片和字体文件 file-loader / url-loader / img-loader
-   Loader说明   file-loader解决图片引入问题，并将图片 copy 到指定目录，默认为 dist   url-loader解依赖 file-loader，当图片小于 limit 值的时候，会将图片转为 base64 编码，大于 limit 值的时候依然是使用 file-loader 进行拷贝   img-loader压缩图片
+|  Loader | 说明  |
+|  ----   | ---- |
+| file-loader  |  解决图片引入问题，并将图片 copy 到指定目录，默认为 dist |
+| url-loader  |    解依赖 file-loader，当图片小于 limit 值的时候，会将图片转为 base64 编码，大于 limit 值的时候依然是使用 file-loader 进行拷贝  |
+| img-loader  | 压缩图片 |
 ```js
 // yarn add file-loader -D
 rules: [{
