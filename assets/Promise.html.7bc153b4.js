@@ -1,0 +1,1 @@
+const t={key:"v-2a8c35bf",path:"/blog/study/Handwritten/Promise.html",title:"Promise",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1654758816e3,contributors:[{name:"\u59DC\u6D77\u9F99",email:"xiaojiang@jianghailongdeMacBook-Pro.local",commits:1}]},filePathRelative:"blog/study/Handwritten/Promise.md"};export{t as data};

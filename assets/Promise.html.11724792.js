@@ -1,0 +1,1 @@
+import{_ as r,o,c as s,b as e,d as t}from"./app.8b255e0f.js";const a={},c=e("h1",{id:"promise",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#promise","aria-hidden":"true"},"#"),t(" Promise")],-1),n=e("hr",null,null,-1),_=[c,n];function i(d,l){return o(),s("div",null,_)}var m=r(a,[["render",i],["__file","Promise.html.vue"]]);export{m as default};
