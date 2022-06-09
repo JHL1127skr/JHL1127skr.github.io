@@ -20,7 +20,8 @@ module.exports = {
         editLink: false,
         lastUpdated:true,
         contributorsText:'创建者',
-        lastUpdatedText:'最后一次更新时间'
+        lastUpdatedText:'最后一次更新时间',
+        sidebarDepth:1
     }),
     plugins: [
         searchPlugin({
@@ -35,4 +36,9 @@ module.exports = {
         mediumZoomPlugin(), //图片缩放
         nprogressPlugin(), //进度条
     ],
+    markdown:{
+        extractHeaders:{
+            level:[3,4]
+        }
+    }
 };
