@@ -44,6 +44,7 @@ module.exports = {
                     ],
                 },
                 "/blog/study/React/Performance.md",
+                "/blog/study/React/Render.md",
             ],
         },
         {
