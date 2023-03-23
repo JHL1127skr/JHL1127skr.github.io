@@ -85,24 +85,13 @@ module.exports = {
         {
             text: "开发",
             children: [
-                "/blog/development/AppVersion.md",
                 "/blog/development/Git.md",
+                "/blog/development/AppVersion.md",
                 "/blog/development/MySQL.md",
                 "/blog/development/WorkSummary.md",
-                "/blog/development/CmdInteractive.md",
-                "/blog/development/CloseEslist.md",
-                "/blog/development/Commit.md",
                 "/blog/development/UserFragment.md",
                 "/blog/development/blog.md",
-            ],
-        },
-    ],
-    "/blog/summary": [
-        {
-            text: "总结",
-            children: [
-                "/blog/summary/VsCodePlugins.md",
-                "/blog/summary/Website.md",
+                "/blog/development/Website.md",
             ],
         },
     ],

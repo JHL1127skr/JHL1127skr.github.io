@@ -10,10 +10,6 @@ module.exports = [
                 text: "开发",
                 link: "/blog/development/",
             },
-            {
-                text: "总结",
-                link: "/blog/summary/",
-            },
         ],
     },
     {
@@ -60,5 +56,9 @@ module.exports = [
                 link: "http://www.jsv9000.app/",
             },
         ],
+    },
+    {
+        text: "掘金",
+        link: "https://juejin.cn/user/1301454562273038/posts",
     },
 ];
