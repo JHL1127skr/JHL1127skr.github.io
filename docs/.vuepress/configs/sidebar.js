@@ -67,17 +67,22 @@ module.exports = {
         {
             text: "工程化",
             collapsible: true,
-            children: ["/blog/study/Engineering/Webpack.md"],
+            children: [
+                "/blog/study/Engineering/Npm&Yarn&Pnpm.md",
+                "/blog/study/Engineering/Npmrunxxx.md",
+                "/blog/study/Engineering/Module.md",
+                "/blog/study/Engineering/Webpack.md",
+            ],
         },
         {
             text: "手撕",
             collapsible: true,
             children: [
+                "/blog/study/Handwritten/New.md",
                 "/blog/study/Handwritten/Call&apply&bind.md",
                 "/blog/study/Handwritten/DeepClone.md",
                 "/blog/study/Handwritten/EventEmitter.md",
                 "/blog/study/Handwritten/Instandof.md",
-                "/blog/study/Handwritten/Promise.md",
             ],
         },
     ],

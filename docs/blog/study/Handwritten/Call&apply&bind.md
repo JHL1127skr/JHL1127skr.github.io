@@ -2,23 +2,28 @@
 ---
 ### Call
 ```js
-function x(a, b) {
-    console.log(this);
-    console.log(a, b);
-}
-let y = { name: '姜海龙' }
-//第一步 给函数的原型对象 添加方法
-Function.prototype.myCall = function (otherThis, ...args) {
-    // 此时 myCall函数里的this  指向调用者 x
-    // this(...args)
-    //使用otherThis 改变 x函数的this 指向
-    // 谁调用 函数 函数 就指向 谁 
-    otherThis.fn = this
-    // 核心理论  将x函数 作为 y对象的方法
-    otherThis.fn(...args) //调用
-    delete otherThis.fn //删除
-}
-x.myCall(y, '1', '2')
+Function.prototype.myCall = fucntion(context){
+    // 判断调用对象
+    if(typeof this !== 'function' ){
+        throw new Error('Type error') //创建一个错误类型并抛出    
+    }
+    //获取参数
+    let args = [...arguments].slice(1)
+    let result = null
+    // 判断 context 是否传入，如果没有传就设置为 window
+    context = context || window
+    // 使用Symbol保证属性唯一，不回重写用户自己定义在context中的同名属性    
+    let fnSymbol = Symbol()
+    // 将被调用的方法设置为 context 的属性
+    // this 即为我们要调用的方法
+    context[fnSymbol] = this
+    // 执行要被调用的方法    
+    result = context[fnSymbol](...args)
+    // 删除手动增加的属性方法
+    delete context[fnSymbol]
+    // 执行结果返回
+    return result
+} 
 ```
 ### Apply
 ```js
@@ -28,8 +33,7 @@ Function.prototype.myApply = function (context) {
   }
   let result = null;
   context = context || window;
-  // 与上面代码相比，我们使用 Symbol 来保证属性唯一
-  // 也就是保证不会重写用户自己原来定义在 context 中的同名属性
+  // 使用Symbol保证属性唯一，不回重写用户自己定义在context中的同名属性    
   const fnSymbol = Symbol();
   context[fnSymbol] = this;
   // 执行要被调用的方法
@@ -60,5 +64,4 @@ Function.prototype.myBind = function (context) {
     );
   };
 };
-
 ```
