@@ -45,6 +45,16 @@ module.exports = {
             ],
         },
         {
+            text: "Vue3",
+            collapsible: true,
+            children: [
+                "/blog/study/Vue3/Base.md",
+                "/blog/study/Vue3/Css.md",
+                "/blog/study/Vue3/Component.md",
+                "/blog/study/Vue3/Pinia.md",
+            ],
+        },
+        {
             text: "HTTP",
             collapsible: true,
             children: [
