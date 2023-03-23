@@ -1,4 +1,4 @@
-# 02-生命周期
+# 生命周期
 ---
 ::: tip 虚拟DOM：核心算法的基石
 - 组件初始化： render方法 -> 生成虚拟DOM -> ReactDOM.render -> 真实DOM
@@ -14,7 +14,7 @@
 > 生命周期方法的本质：组件的“灵魂（render）”与“躯干（render以外的生命周期）”
 ### 一、React15的生命周期流程
 
-![图片](/blog/ReactNote02-1.png)
+![图片](/blog/Component01.png)
 
 **初始化**：constructor -> WillMount -> render -> DIdMount
 
@@ -30,7 +30,7 @@
 **卸载**：在父组件中被移除/组件设置的key 在父组件runder的过程中 与上次不一样
 ### 二、React16的生命周期流程
 
-![图片](/blog/ReactNote02-2.png)
+![图片](/blog/Component02.png)
 
 #### 一、新增了两个生命周期
 ```jsx
@@ -74,7 +74,7 @@ Fiber会将一个大的更新任务拆解为许多小任务，会使原本同步
 
 React为了解决之前的漫长不可打断的同步渲染进程带来的风险，推出Filer架构，使渲染流程变成可打断的异步模式。在Fiber机制下，三个Will相关的生命周期处于可以被打断的render阶段，render阶段使允许暂停、终止、和重启的。所以为了防止生命周期多次被调用导致出现BUG，进而删除和引入新的生命周期，同时也确保了生命周期的行为更加纯粹、可控、可预测。
 #### 三、Fiber架构对生命周期的影响
-![图片](/blog/ReactNote02-3.png)
+![图片](/blog/Component03.png)
 
 
 

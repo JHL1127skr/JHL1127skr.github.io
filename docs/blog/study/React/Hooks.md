@@ -1,4 +1,4 @@
-# 04-React-Hooks设计思想
+# React-Hooks设计思：未完成
 ---
 ::: tip 类组件
 面向对象编程思想的一种表征
@@ -35,13 +35,13 @@
 mountState(首次渲染) 构建链表并渲染
 :::
 
-![图片](/blog/ReactNote04-1.png)
+![图片](/blog/Hooks01.png)
 
 ::: tip 更新：
 updateState 依次遍历链表并渲染
 :::
 
-![图片](/blog/ReactNote04-2.png)
+![图片](/blog/Hooks02.png)
 
 ::: warning 注意：
 hooks的渲染是通过“依次遍历”来定位每个hooks内容的。如果前后两次读到的链表在顺序上出现差异，那么渲染的结果自然是不可控的。

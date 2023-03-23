@@ -1,9 +1,9 @@
-# 09-React事件机制
+# React事件机制：未完成
 ---
 ### 原生DOM事件流
 事件捕获阶段 -> 目标阶段 -> 事件冒泡阶段
 
-![图片](/blog/ReactNote09.png)
+![图片](/blog/Event01.png)
 
 ### React事件机制
 **事件委托**

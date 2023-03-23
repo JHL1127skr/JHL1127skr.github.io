@@ -1,3 +1,3 @@
-# 01-JSX如何变成DOM
+# JSX如何变成DOM
 ---
 ![图片](/blog/ReactNote01.png)
