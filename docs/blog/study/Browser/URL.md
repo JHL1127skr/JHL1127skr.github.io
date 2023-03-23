@@ -36,12 +36,16 @@ https://baidu.com:80/xxxx/page/index.html?id=xxx#title
         - 503 服务器不可用
 ### 五、浏览器渲染页面
 ![图片](/blog/url.png)
-1. 解析HTML，构建DOM树
-2. 解析CSS，生成CSS规则树
-3. 合并DOM树和CSS规则，生成render树
-4. 布局render树（layout/reflow：回流），负责计算元素的尺寸和位置
-5. 绘制render树（repaint：重绘），绘制页面像素信息
-6. 解析Javascript脚本  通过DOM API和CSSOM API 操作DOM树 和CSS树  与用户进行交互
+- **DOM**：将HTML解析成DOM树
+- **Style**：解析CSS
+- **Layout**：构建布局树，布局树会移出DOM树中不可见的部分，并计算可见部分的几何位置
+- **Layer**：将页面划分多个图层，一些层叠上下文CSS属性（z-index、opacity、position）等会使DOM元素形成独立的图层
+- **Paint**：为每个图层生成包含“绘制信息”的绘制图表，将绘制图表提交给渲染进程的合成线程用于绘制
+
+**每次执行流水线时，上述任务并不一定全部执行 例如：**
+- **重排（回流）**：当通过JS或者CSS修改DOM元素的几何属性（比如长度、宽度）时，会触发整条流水线
+- **重绘**：当修改的属性不涉及几何属性（比如文字颜色、样式等）时，会省略流水线中的Layout、Layer过程
+- **合成**：当修改“不涉及重绘、重排的属性”（比如transform属性）时，会省略流水线的Layout、Layer、Paint过程，仅执行合成线程的绘制工作。
 
 如果遇到外联的样式声明和脚本声明  则暂停文档解析
 

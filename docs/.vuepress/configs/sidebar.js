@@ -11,17 +11,21 @@ module.exports = {
             children: [
                 "/blog/study/CSS/CssPriority.md",
                 "/blog/study/CSS/CssSelector.md",
+                "/blog/study/CSS/Flex.md",
+                "/blog/study/CSS/BFC.md",
             ],
         },
         {
             text: "JavaScript",
             collapsible: true,
             children: [
-                "/blog/study/JS/New.md",
-                "/blog/study/JS/Promise.md",
                 "/blog/study/JS/DataType.md",
                 "/blog/study/JS/Scope.md",
                 "/blog/study/JS/Prototype.md",
+                "/blog/study/JS/Promise.md",
+                "/blog/study/JS/Function.md",
+                "/blog/study/JS/Forin&Forof.md",
+                "/blog/study/JS/Bind.md",
             ],
         },
         {
