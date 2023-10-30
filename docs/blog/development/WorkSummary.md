@@ -1,37 +1,53 @@
 # 工作总结
+
 ---
-#### 新学到的dva派发方式	
-```jsx
-const addemind(id:number,type:number){
-  	dispatch({
-      	type:xxx/xxx
-      	payload:{
-							factoryId:id
-    		}
-    })             //这里派发异步操作  通过return status 返回值
-}.then((status)=>{
-  	//这里进行判断
-  		if(){
-     	//同步派发
-     }else{
-    //同步派发
-  }
-})
+
+#### reduce 小技巧 实现 filter.map
+
+```js
+const a = [1, 2];
+const b = [
+	{ title: "A", value: "1" },
+	{ title: "B", value: "2" },
+	{ title: "C", value: "3" },
+];
+const target = ["A", "B"];
+//第一种 使用 filter与map
+const targetA = b.filter(({ value }) => a.includes(value)).map((title) => title);
+//第二种 使用 reduce
+const targetB = b.reduce((pre, current) => {
+	if (a.includes(current.value)) {
+		return [...pre, ...current.title];
+	}
+}, []);
 ```
 
-#### IOS兼容
-苹果newDate 不能识别'2021-11-27 10:00' 只能 识别2021/11/27
-
-#### JS中如何判断对象是一个空{ }
+#### useEffect 实现防抖
 
 ```jsx
-//不能直接使用==来判断 涉及到运算符浅比较与栈和堆
-Object.keys(obj).length  == 0 && empty.constructor === Object;
-Object.keys(obj).length  == 0 //ES6 新方法 将数组的key值合并成一个数组 然后判断数组长度
-empty.constructor === Object; //区别JS中其他的内置构造函数 如 new Date、new Reg
+import { useEffect, useState } from "react";
+
+export default function EffectDemo() {
+	const [text, setText] = useState("");
+	useEffect(() => {
+		let timer = setTimeout(() => {
+			console.log("发送搜索请求");
+		}, 500);
+		return () => {
+			console.log("清除定时器");
+			clearTimeout(timer);
+		};
+	}, [text]);
+
+	return (
+		<div>
+			<input type='text' placeholder='请输入内容...' onChange={(e) => setText(e.target.value)} />
+		</div>
+	);
+}
 ```
 
-#### React中多个受控组件
+#### React 中多个受控组件
 
 ```jsx
 changeIptValue:function(event){
@@ -41,32 +57,16 @@ changeIptValue:function(event){
 }
 ```
 
-#### 浏览器缓存机制 
+#### 原生 JS 实现点击复制
 
 ```jsx
-浏览器向服务器请求资源时 会先去看本地有没有
-打包形成的新文件会使用 /*版本号*/ 命名 
-所以如果没有更新版本号或者没有清楚缓存  会使用浏览器本地的缓存文件
+let oInput = document.createElement("input"); //新建input节点
+oInput.value = "被复制的值"; //赋值给input
+document.body.appendChild(oInput); //插入input节点
+oInput.select();
+document.execCommand("Copy");
+document.body.removeChild(oInput); //删除inpit节点
 ```
-
-#### 原生JS实现点击复制
-
-```jsx
-let oInput = document.createElement('input'); //新建input节点
-        oInput.value = '被复制的值'; //赋值给input
-        document.body.appendChild(oInput); //插入input节点
-        oInput.select(); 
-        document.execCommand('Copy');
-        document.body.removeChild(oInput); //删除inpit节点
-```
-
-#### app 小程序 调试工具
-
-```html
-<script src="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/3.0.0/vconsole.min.js"></script>
-<script type="text/javascript">var vConsole = new VConsole();</script>
-```
-
 
 #### Input 中文防抖
 
@@ -104,4 +104,3 @@ onCompositionEnd: function (e) {
         e.target.dispatchEvent(event);
     },
 ```
-
