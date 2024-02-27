@@ -11,6 +11,7 @@ module.exports = {
     lang: "zh-CN", //语言  
     title: "小姜的前端记录", //导航栏左侧title
     description: "前端学习总结",
+    stylus: true,
     theme: defaultTheme({
         //主题配置
         navbar, //导航栏配置
@@ -18,10 +19,10 @@ module.exports = {
         logo: "/images/logo.png", //导航栏左侧logo
         repo: "https://github.com/JHL1127skr", //导航栏右侧GitHub链接
         editLink: false,
-        lastUpdated:true,
-        contributorsText:'创建者',
-        lastUpdatedText:'最后一次更新时间',
-        sidebarDepth:1
+        lastUpdated: true,
+        contributorsText: '创建者',
+        lastUpdatedText: '最后一次更新时间',
+        sidebarDepth: 1
     }),
     plugins: [
         searchPlugin({
@@ -36,9 +37,9 @@ module.exports = {
         mediumZoomPlugin(), //图片缩放
         nprogressPlugin(), //进度条
     ],
-    markdown:{
-        extractHeaders:{
-            level:[3,4]
+    markdown: {
+        extractHeaders: {
+            level: [3, 4]
         }
     }
 };
