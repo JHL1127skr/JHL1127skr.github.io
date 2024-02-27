@@ -92,4 +92,17 @@ module.exports = {
 			],
 		},
 	],
+	"/blog/interview": [
+		{
+			text: "面试",
+			children: [
+				"/blog/interview/za.md",
+				"/blog/interview/JavaScript.md",
+				"/blog/interview/Css.md",
+				"/blog/interview/Vue.md",
+				"/blog/interview/React.md",
+			],
+		},
+	]
+
 };

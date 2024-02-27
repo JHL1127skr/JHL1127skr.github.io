@@ -10,6 +10,9 @@ actions:
   - text: 开发 →
     link: /blog/development
     type: primary
+  - text: 面试 →
+    link: /blog/interview
+    type: primary
 features:
 - title: 学习
   details: 以前端为主的知识体系汇总
