@@ -11,7 +11,6 @@ module.exports = {
     lang: "zh-CN", //语言  
     title: "小姜的前端记录", //导航栏左侧title
     description: "前端学习总结",
-    stylus: true,
     theme: defaultTheme({
         //主题配置
         navbar, //导航栏配置
