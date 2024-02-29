@@ -1,0 +1,1 @@
+const t={key:"v-235b7760",path:"/blog/study/JS/Bind.html",title:"bind\u7684\u4F7F\u7528",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1679579624e3,contributors:[{name:"JHL1127skr",email:"1103821937@qq.com",commits:1}]},filePathRelative:"blog/study/JS/Bind.md"};export{t as data};
