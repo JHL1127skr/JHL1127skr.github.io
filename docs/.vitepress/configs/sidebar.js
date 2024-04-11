@@ -2,12 +2,12 @@ module.exports = {
 	"/blog/study": [
 		// {
 		// 	text: "HTML",
-		// 	collapsible: true,
+		// 	collapsed: false,
 		// 	items: [],
 		// },
 		{
 			text: "CSS",
-			collapsible: true,
+			collapsed: false,
 			items: [
 				{ text: "CSS 优先级", link: "/blog/study/CSS/CssPriority.md" },
 				{ text: "CSS 常见选择器", link: "/blog/study/CSS/CssSelector.md" },
@@ -17,7 +17,7 @@ module.exports = {
 		},
 		{
 			text: "JavaScript",
-			collapsible: true,
+			collapsed: false,
 			items: [
 				{ text: "数组字符串常用方法", link: "/blog/study/JS/Method.md" },
 				{ text: "数据类型及判断数据类型的方法", link: "/blog/study/JS/DataType.md" },
@@ -30,7 +30,7 @@ module.exports = {
 		},
 		{
 			text: "React",
-			collapsible: true,
+			collapsed: false,
 			items: [
 				{ text: "JSX如何变成DOM", link: "/blog/study/React/JSX.md" },
 				{ text: "生命周期", link: "/blog/study/React/Component.md" },
@@ -45,7 +45,7 @@ module.exports = {
 		},
 		{
 			text: "Vue3",
-			collapsible: true,
+			collapsed: false,
 			items: [
 				{ text: "基础用法", link: "/blog/study/Vue3/Base.md" },
 				{ text: "CSS 特性", link: "/blog/study/Vue3/Css.md" },
@@ -55,7 +55,7 @@ module.exports = {
 		},
 		{
 			text: "HTTP",
-			collapsible: true,
+			collapsed: false,
 			items: [
 				{ text: "HTTP与HTTPS", link: "/blog/study/HTTP/HTTP.md" },
 				{ text: "HTTP缓存", link: "/blog/study/HTTP/HTTPCache.md" },
@@ -63,7 +63,7 @@ module.exports = {
 		},
 		{
 			text: "浏览器相关",
-			collapsible: true,
+			collapsed: false,
 			items: [
 				{ text: "从输入URL到页面加载出来发生了什么", link: "/blog/study/Browser/URL.md" },
 				{ text: "垃圾回收机制", link: "/blog/study/Browser/GarbageCollection.md" },
@@ -72,7 +72,7 @@ module.exports = {
 		},
 		{
 			text: "工程化",
-			collapsible: true,
+			collapsed: false,
 			items: [
 				{ text: "npm/yarn/pnpm", link: "/blog/study/Engineering/Npm&Yarn&Pnpm.md" },
 				{ text: "npm run xxx 发生了什么", link: "/blog/study/Engineering/Npmrunxxx.md" },
@@ -82,7 +82,7 @@ module.exports = {
 		},
 		{
 			text: "手撕",
-			collapsible: true,
+			collapsed: false,
 			items: [
 				{ text: "new", link: "/blog/study/Handwritten/New.md" },
 				{ text: "call/apply/bind", link: "/blog/study/Handwritten/Call&apply&bind.md" },
@@ -90,7 +90,6 @@ module.exports = {
 				{ text: "发布订阅模式", link: "/blog/study/Handwritten/EventEmitter.md" },
 				{ text: "Instanceof", link: "/blog/study/Handwritten/Instandof.md" },
 				{ text: "防抖与节流", link: "/blog/study/Handwritten/Debounce.md" },
-				
 			],
 		},
 	],
@@ -119,6 +118,34 @@ module.exports = {
 				{ text: "Vue 相关", link: "/blog/interview/Vue.md" },
 				{ text: "React 相关", link: "/blog/interview/React.md" },
 			],
+		},
+	],
+	"/blog/algorithm": [
+		{
+			text: "数组",
+			collapsed: false,
+			items: [
+				{ text: "左右指针", link: "/blog/algorithm/Array/LeftAndRight.md" },
+				{ text: "快慢指针", link: "/blog/algorithm/Array/FastAndSlow.md" },
+				{ text: "滑动窗口", link: "/blog/algorithm/Array/SlidingWindow.md" },
+				{ text: "二维数组", link: "/blog/algorithm/Array/TwoDimensional.md" },
+				{ text: "前缀和", link: "/blog/algorithm/Array/PrefixSum.md" },
+				{ text: "差分数组", link: "/blog/algorithm/Array/Differential.md" },
+			],
+		},
+		{
+			text: "链表",
+			collapsed: false,
+			items: [
+				{ text: "结构", link: "/blog/algorithm/LinkedList/Structure" },
+				{ text: "虚拟头结点", link: "/blog/algorithm/LinkedList/Fictitious" },
+				{ text: "双指针", link: "/blog/algorithm/LinkedList/DoublePointer" },
+			],
+		},
+		{
+			text: "二叉树",
+			collapsed: false,
+			items: [{ text: "结构", link: "/blog/algorithm/BinaryTree/Structure"}],
 		},
 	],
 };

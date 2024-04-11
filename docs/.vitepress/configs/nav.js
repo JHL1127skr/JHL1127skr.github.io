@@ -15,6 +15,10 @@ module.exports = [
 				text: "面试",
 				link: "/blog/interview/Unclassified",
 			},
+			{
+				text: "算法",
+				link: "/blog/algorithm/Array/LeftAndRight",
+			},
 		],
 	},
 	{

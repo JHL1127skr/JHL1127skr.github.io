@@ -19,6 +19,9 @@ hero:
     - theme: alt
       text: 面试
       link: /blog/interview/Unclassified
+    - theme: alt
+      text: 算法
+      link: /blog/algorithm/Array/LeftAndRight
 
 features:
   - title: 学习
@@ -27,4 +30,6 @@ features:
     details: 工作上遇到的一些开发技巧或经验
   - title: 面试
     details: 高频面试题与笔试题
+  - title: 算法
+    details: 一些简单的基础算法
 ---
