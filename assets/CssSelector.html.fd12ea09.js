@@ -1,0 +1,1 @@
+const t={key:"v-7c6d16dd",path:"/blog/study/CSS/CssSelector.html",title:"CSS \u9009\u62E9\u5668",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1654758816e3,contributors:[{name:"\u59DC\u6D77\u9F99",email:"xiaojiang@jianghailongdeMacBook-Pro.local",commits:1}]},filePathRelative:"blog/study/CSS/CssSelector.md"};export{t as data};
