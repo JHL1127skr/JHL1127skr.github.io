@@ -1,1 +1,0 @@
-const t={key:"v-42a29395",path:"/blog/study/JS/Function.html",title:"\u7BAD\u5934\u51FD\u6570\u548C\u666E\u901A\u51FD\u6570\u7684\u533A\u522B",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1679579624e3,contributors:[{name:"JHL1127skr",email:"1103821937@qq.com",commits:1}]},filePathRelative:"blog/study/JS/Function.md"};export{t as data};

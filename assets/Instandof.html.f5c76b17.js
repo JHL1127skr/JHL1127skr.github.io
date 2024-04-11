@@ -1,1 +1,0 @@
-const t={key:"v-79ec8f52",path:"/blog/study/Handwritten/Instandof.html",title:"instandof",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1654758816e3,contributors:[{name:"\u59DC\u6D77\u9F99",email:"xiaojiang@jianghailongdeMacBook-Pro.local",commits:1}]},filePathRelative:"blog/study/Handwritten/Instandof.md"};export{t as data};
