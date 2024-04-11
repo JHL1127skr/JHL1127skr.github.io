@@ -1,16 +1,20 @@
+---
+outline: deep
+---
+
 # 检测代码重复率
 
 ---
 
 使用「jscpd」检测项目中代码的重复率，针对复制粘贴的代码尤其有效，支持超过 150 种的源码文件格式。
 
-#### 一、安装
+### 一、安装
 
 ```bash
 npm i jscpd -g
 ```
 
-#### 二、配置
+### 二、配置
 
 可以创建`.jscpd.json`，或者直接在`package.json` 中配置。
 
@@ -40,14 +44,14 @@ npm i jscpd -g
    }
 ```
 
-#### 三、执行
+### 三、执行
 
 ```bash
 # 命令 文件 输出地址
 jscpd ./src -o 'report'
 ```
 
-#### 四、结果
+### 四、结果
 
 控制台
 ![图片](/blog/CodeRepeatLog.png)
@@ -57,7 +61,7 @@ jscpd ./src -o 'report'
 ![图片](/blog/CodeRepeatHtml.png)
 ![图片](/blog/CodeRepeatHtml2.png)
 
-#### 五、在 commit 提交检测
+### 五、在 commit 提交检测
 
 在 ` pre-commit` 文件中加入命令，通过上述的 `threshold` 来控制是否报错打断
 

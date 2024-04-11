@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # 组件重新渲染
 ---
  state改变、props改变、context改变都会使组件重新渲染

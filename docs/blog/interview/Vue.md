@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # Vue
 ### vue3 与 vue2 生命周期对比
 ```js

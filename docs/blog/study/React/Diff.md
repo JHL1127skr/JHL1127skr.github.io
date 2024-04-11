@@ -1,13 +1,17 @@
+---
+outline: deep
+---
+
 # 虚拟DOM
 ---
-#### 虚拟DOM（Virtual DOM）
+### 虚拟DOM（Virtual DOM）
 
-##### 一、什么是虚拟DOM
+### 一、什么是虚拟DOM
 
 本质是JS跟DOM的一个映射缓存，形态上表现为一个能够描述DOM结构及其属性信息的JS对象
 ![](/blog/Diff01.png)
 
-##### 二、虚拟DOM的价值到底是什么（解决了什么问题）
+#### 二、虚拟DOM的价值到底是什么（解决了什么问题）
 
 1、研发体验/研发效率的问题<br/>
 2、跨平台多端开发 同一套虚拟DOM可以渲染在不同的载体<br/>
@@ -15,7 +19,7 @@
 
 ### Diff算法
 
-##### 一、什么是diff算法
+#### 一、什么是diff算法
 
 > **算法的核心就是复用节点**
 
@@ -27,13 +31,13 @@ commit：对有effectTag标记的fiber节点进行dom操作，并执行所有的
 
 > vdom -> fiber 这个过程称之为reconcile（调和），是可以被打断的，由scheduler调度执行 
 
-##### 二、React预设的三个限制
+#### 二、React预设的三个限制
 
 1、只对同层级元素进行Diff。如果一个DOM元素前后跨越了层级，那么React不会尝试复用它<br/>
 2、两个不同类型的元素会产生不同的树。即销毁原组件，创建新组件。<br/>
 3、开发者可以通过Key 来暗示子元素在不同的渲染下保持稳
 
-##### 三、具体实现 
+#### 三、具体实现 
 
 入口函数 `reconcileChildFibers()`
 
@@ -71,10 +75,10 @@ function reconcileChildFibers(
 }
 ```
 
-##### 第一轮遍历：尝试逐个复用节点
+#### 第一轮遍历：尝试逐个复用节点
 遍历JSX对象（newChildren 数组）去和Fiber节点对比（链表）<br/>
 判断 key 和 type（节点类型，如 div、p、span、函数组件名），如果都相同则复用，不同跳出整个遍历。
-##### 第二轮遍历：处理剩下的节点
+#### 第二轮遍历：处理剩下的节点
 
 **情况1：只剩旧Fiber节点**<br/>
 说明更新需要的新Fiber节点已经创建完毕，遍历剩余的旧Fiber节点依次执行删除操作（放入父fiber节点的deletions 数组中）
@@ -90,6 +94,3 @@ function reconcileChildFibers(
 
 如果 `oldIndex >= lastPlacedIndex` 代表该可复用节点不需要移动 ，并将 `lastPlacedIndex = oldIndex; `<br/>
 如果 `oldIndex < lastplacedIndex `该可复用节点之前插入的位置索引小于这次更新需要插入的位置索引，代表该节点需要向右移动
-
-
-

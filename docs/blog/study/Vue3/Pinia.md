@@ -1,6 +1,10 @@
+---
+outline: deep
+---
+
 # Vue3状态管理：Pinia
 ---
-#### 一、安装并引用
+### 一、安装并引用
 
 安装：`npm install pinia`
 
@@ -11,7 +15,7 @@ const pinia = createPinia()
 app.use(pinia)
 ```
 
-#### 二、创建Store
+### 二、创建Store
 
 ```javascript
 import { ref, computed } from 'vue'
@@ -28,7 +32,7 @@ export const useCounterStore = defineStore('counter', () => {
 })
 ```
 
-#### 三、在组件内使用
+### 三、在组件内使用
 
 ```vue
 <script setup>
@@ -47,9 +51,9 @@ export const useCounterStore = defineStore('counter', () => {
 </template>
 ```
 
-#### 四、State
+### 四、State
 
-###### 1、重置state
+##### 1、重置state
 
 通过调用 store 的 `$reset()` 方法将 state 重置为初始值。
 
@@ -59,7 +63,7 @@ const store = useStore()
 store.$reset()
 ```
 
-###### 2、改变state
+##### 2、改变state
 
 第一种：直接修改属性 `store.count = 1`
 第二种：通过`$patch`，可以一次修改多个
@@ -81,7 +85,7 @@ store.$patch((state) => {
 })
 ```
 
-###### 3、监听state
+##### 3、监听state
 
 我们可以通过`$subscribe`方法可以监听 store 状态的变化。
 与`watch()`相比，使用`$subscribe()`的优点是，store 多个状态发生变化之后，回调函数只会执行一次。
@@ -97,4 +101,3 @@ counterStore.$subscribe((mutation, state) => {
 })
 </script>
 ```
-

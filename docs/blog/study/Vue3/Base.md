@@ -1,6 +1,10 @@
+---
+outline: deep
+---
+
 # Vue3基础用法
 ---
-#### 定义变量
+### 定义变量
 
 ```vue
 <script>
@@ -25,7 +29,7 @@
 </template>
 ```
 
-#### 计算属性
+### 计算属性
 
 ```vue
 <script setup lang='ts'>
@@ -55,7 +59,7 @@
 </template>
 ```
 
-#### 侦听器
+### 侦听器
 
 ```vue
 <script setup lang="ts">
@@ -85,7 +89,7 @@
 </script>
 ```
 
-#### 工具
+### 工具
 
 ```vue
 <script setup lang='ts'>

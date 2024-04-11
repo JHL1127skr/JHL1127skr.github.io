@@ -1,8 +1,12 @@
+---
+outline: deep
+---
+
 # 工作总结
 
 ---
 
-#### reduce 小技巧 实现 filter.map
+### reduce 小技巧 实现 filter.map
 
 ```js
 const a = [1, 2];
@@ -22,7 +26,7 @@ const targetB = b.reduce((pre, current) => {
 }, []);
 ```
 
-#### useEffect 实现防抖
+### useEffect 实现防抖
 
 ```jsx
 import { useEffect, useState } from "react";
@@ -47,7 +51,7 @@ export default function EffectDemo() {
 }
 ```
 
-#### React 中多个受控组件
+### React 中多个受控组件
 
 ```jsx
 changeIptValue:function(event){
@@ -57,7 +61,7 @@ changeIptValue:function(event){
 }
 ```
 
-#### 原生 JS 实现点击复制
+### 原生 JS 实现点击复制
 
 ```jsx
 let oInput = document.createElement("input"); //新建input节点
@@ -68,7 +72,7 @@ document.execCommand("Copy");
 document.body.removeChild(oInput); //删除inpit节点
 ```
 
-#### Input 中文防抖
+### Input 中文防抖
 
 ```js
 const searchInputDOM = document.querySelector('.search-input');

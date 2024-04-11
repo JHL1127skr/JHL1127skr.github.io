@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # https缓存
 ### 强缓存
 ![图片](/blog/httpCache1.png)
@@ -12,12 +16,12 @@ Canche-Control： 控制强制缓存的逻辑。
 - Etag：资源的唯一标识（一个字符串，类似于人类的指纹）。
 
 ![图片](/blog/httpCache2.png)
-##### Last-Modified
+#### Last-Modified
 服务端拿到 if-Modified-Since 之后拿这个时间去和服务端资源最后修改时间做比较如果一致则返回 304 不一致（也就是资源已经更新了）就返回 200 和新的资源及新的 Last-Modified
 
 ![图片](/blog/httpCache3.png)
 
-##### Etag
+#### Etag
 其实 Etag 和 Last-Modified 一样的，只不过 Etag 是服务端对资源按照一定方式（比如 contenthash）计算出来的唯一标识，就像人类指纹一样，传给客户端之后，客户端再传过来时候，服务端会将其与现在的资源计算出来的唯一标识做比较，一致则返回 304，不一致就返回 200 和新的资源及新的 Etag。
 ![图片](/blog/httpCache4.png)
 ### 总结

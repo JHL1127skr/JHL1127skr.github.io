@@ -1,19 +1,22 @@
+---
+outline: deep
+---
+
 # Promise 与async/await
 ---
 ### Promise
-**1、状态**
-
+### 1、状态
 - 等待中：pending
 - 成功：resolved
 - 失败：rejected
 
-**2、原型方法**
+### 2、原型方法
 
 - 成功回调 `Promise.prototype.then()`
 - 失败回调：`Promise.prototype.catch() `
 - 不管成功或者失败：`Promise.prototype.finally() `
 
-**3、静态方法（all、rece、allSettled、any）**
+### 3、静态方法（all、rece、allSettled、any）
 
 ```javascript
 const p = Promise.all([p1,p2,p3])
@@ -31,15 +34,13 @@ const p =Promise.any([p1,p2,p3])
 
 ### async/await
 
-**1、含义**
+### 1、含义
+
 一句话，它就是 Generator 函数的语法糖。
+<br/>
+内置执行器、更好的语义、更广的适用性、返回值是 Promise
 
-- 内置执行器
-- 更好的语义
-- 更广的适用性
-- 返回值是 Promise
-
-**2、语法**
+### 2、语法
 
 ```javascript
 async function getStockPriceByName(name) {

@@ -1,9 +1,13 @@
+---
+outline: deep
+---
+
 # Vue3组件之间传参数
 ---
 ### 父与子
 
-##### 一、Props
-###### 普通写法：
+#### 一、Props
+**普通写法：**
 ```vue
 <template>
   <Child :title="title" @handel='handel'/>
@@ -39,7 +43,7 @@
 </script>
 ```
 
-###### TS写法：
+**TS写法：**
 
 ```vue
 <!-- TS版本 -->

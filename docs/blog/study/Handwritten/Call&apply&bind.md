@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # Call&apply&bind
 ---
 ### Call

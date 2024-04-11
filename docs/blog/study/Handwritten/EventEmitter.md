@@ -1,6 +1,10 @@
+---
+outline: deep
+---
+
 # 发布订阅模式
 ---
-#### 创建
+### 创建
 ```js
 class myEventEmitter{
     constructor(){
@@ -36,7 +40,7 @@ class myEventEmitter{
     }
 }
 ```
-#### 调用
+### 调用
 ```js
 const myEvent = new myEventEmitter()
 

@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # bind的使用
 ---
 **问：bind之后能改变this指向吗**

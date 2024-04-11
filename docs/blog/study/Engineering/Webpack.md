@@ -1,4 +1,8 @@
 ---
+outline: deep
+---
+
+---
 sidebarDepth: 2
 ---
 # Webpack
@@ -6,7 +10,7 @@ sidebarDepth: 2
 
 ### 1、简单配置
 
-#### 1.1目录结构
+### 1.1目录结构
 
 ```javascript
 webpack_work
@@ -19,7 +23,7 @@ webpack_work
 └─ package.json
 ```
 
-#### 1.2 基础配置
+### 1.2 基础配置
 
 ```javascript
 const path = require("path");
@@ -61,9 +65,9 @@ module.exports = (env, argv) => {
 
 **webpack 默认支持处理 JS 与 JSON 文件，其他类型都处理不了，这里必须借助 Loader 来对不同类型的文件的进行处理。**
 
-#### 1.3 Loader : 就是将 Webpack 不认识的内容转化为认识的内容
+### 1.3 Loader : 就是将 Webpack 不认识的内容转化为认识的内容
 
-##### 1.3.1 处理 CSS ：`css-lodaer`
+#### 1.3.1 处理 CSS ：`css-lodaer`
 
 ```javascript
 // yarn add  css-loader -D
@@ -76,7 +80,7 @@ rules: [ // 转换规则
 ]
 ```
 
-##### 1.3.2 引入 CSS ：`style-loader`
+#### 1.3.2 引入 CSS ：`style-loader`
 
 ```javascript
 // yarn add  style-loader -D
@@ -88,7 +92,7 @@ rules: [
 }
 ```
 
-##### 1.3.3 CSS兼容性：`postcss-loader、postcss、postcss-preset-env`
+#### 1.3.3 CSS兼容性：`postcss-loader、postcss、postcss-preset-env`
 
 ```javascript
 // yarn add postcss postcss-loader postcss-preset-env -D
@@ -118,7 +122,7 @@ last 2 versions # 回退两个浏览器版本
 IE 10 # 兼容IE 10
 ```
 
-##### 1.3.4 引入sass `sass-loader node-sass`
+#### 1.3.4 引入sass `sass-loader node-sass`
 
 ```javascript
 // yarn add sass-loader node-sass -D
@@ -131,7 +135,7 @@ rules: [
 ]
 ```
 
-##### 1.3.5 JS 兼容性（Babel）`babel-loader @babel/core @babel/preset-env`
+#### 1.3.5 JS 兼容性（Babel）`babel-loader @babel/core @babel/preset-env`
 
 ```javascript
 // yarn add babel-loader @babel/core @babel/preset-env -D
@@ -156,9 +160,9 @@ module.exports = {
 };
 ```
 
-#### **1.4 plugin : 可以贯穿 Webpack 打包的生命周期，执行不同的任务**
+### **1.4 plugin : 可以贯穿 Webpack 打包的生命周期，执行不同的任务**
 
-##### 1.4.1 自动引入到 Html ：`html-webpack-plugin`
+#### 1.4.1 自动引入到 Html ：`html-webpack-plugin`
 
 ```javascript
 //yarn add html-webpack-plugin -D
@@ -171,7 +175,7 @@ module.exports = {
   ]
 ```
 
-##### 1.4.2 目录清空：`clean-webpack-plugin`
+#### 1.4.2 目录清空：`clean-webpack-plugin`
 
 ```javascript
  //yarn add clean-webpack-plugin -D
@@ -182,7 +186,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
   ]
 ```
 
-##### **1.4.3 分理样式文件 ：**`mini-css-extract-plugin`
+#### **1.4.3 分理样式文件 ：**`mini-css-extract-plugin`
 
 ```javascript
 // yarn add mini-css-extract-plugin -D
@@ -205,7 +209,7 @@ plugins:[
 ]
 ```
 
-##### **1.4.4 图片和字体文件 **`file-loader、url-loader、img-loader`
+#### 1.4.4 图片和字体文件 `file-loader、url-loader、img-loader`
 
 | ** Loader** | **说明**                                                     |
 | ----------- | ------------------------------------------------------------ |
@@ -241,15 +245,15 @@ rules:[{
 }]
 ```
 
-#### 1.5 环境区分
+### 1.5 环境区分
 
-##### 1.5.1 本地安装`cross-env`
+#### 1.5.1 本地安装`cross-env`
 
 ```javascript
 yarn add cross-env -D
 ```
 
-##### 1.5.2 配置启动命令
+#### 1.5.2 配置启动命令
 
 ```json
 "scripts": {
@@ -259,7 +263,7 @@ yarn add cross-env -D
 },
 ```
 
-##### 1.5.3 在 Webpack 配置文件中获取环境变量
+#### 1.5.3 在 Webpack 配置文件中获取环境变量
 
 ```javascript
 const config = {
@@ -273,15 +277,15 @@ module.exports = (env, argv) => {
 }
 ```
 
-#### 1.6 启动 devServer
+### 1.6 启动 devServer
 
-##### 1.6.1 安装 `webpack-dev-server`
+#### 1.6.1 安装 `webpack-dev-server`
 
 ```javascript
 yarn add webpack-dev-server -D
 ```
 
-##### 1.6.2 配置本地服务
+#### 1.6.2 配置本地服务
 
 ```javascript
 const config = {
@@ -297,7 +301,7 @@ const config = {
 }
 ```
 
-#### 1.7 资源模块的使用
+### 1.7 资源模块的使用
 
 > webpack5 新增资源模块(asset module)，允许使用资源文件（字体，图标等）而无需配置额外的 loader。
 
@@ -354,7 +358,7 @@ const config = {
   // ...
 ```
 
-#### 2.1 推荐配置
+### 2.1 推荐配置
 
 **本地开发：**`eval-cheap-module-source-map`
 
@@ -391,7 +395,7 @@ Webpack 文件指纹策略是将文件名后面加上 hash 值。例如我们在
 
 ### 1、优化构建速度
 
-#### 1.1 构建费时分析 `speed-measure-webpack-plugin`
+### 1.1 构建费时分析 `speed-measure-webpack-plugin`
 
 ```javascript
 ...
@@ -414,9 +418,9 @@ module.exports = (env, argv) => {
 
 这里我们对 `mini-css-extract-plugin` 进行一下降级处理: `^2.1.0 -> ^1.3.6`
 
-#### 1.2 优化 resolve 配置
+### 1.2 优化 resolve 配置
 
-##### 1.2.1 alias
+#### 1.2.1 alias
 
 alias 用的创建 `import`或 `require` 的别名，用来简化模块引用，项目中基本都需要进行配置。
 
@@ -454,7 +458,7 @@ import '@/fonts/iconfont.css'
 import footer from "components/footer";
 ```
 
-##### 1.2.2 extensions
+#### 1.2.2 extensions
 
 ```javascript
 const config = {
@@ -488,7 +492,7 @@ const config = {
 };
 ```
 
-##### 1.2.3 modules
+#### 1.2.3 modules
 
 告诉 webpack 解析模块时应该搜索的目录，常见配置如下
 
@@ -503,7 +507,7 @@ const config = {
 };
 ```
 
-#### 1.3 noParse
+### 1.3 noParse
 
 - 不需要解析依赖的第三方大型类库等，可以通过这个字段进行配置，以提高构建速度
 - 使用 noParse 进行忽略的模块文件中不会解析 import、require 等语法
@@ -519,9 +523,9 @@ const config = {
 };
 ```
 
-#### 1.4利用缓存
+### 1.4利用缓存
 
-##### 1.4.1 babel-loader 开启缓存
+#### 1.4.1 babel-loader 开启缓存
 
 ```javascript
 const config = {
@@ -543,7 +547,7 @@ const config = {
 }
 ```
 
-##### 1.4.2 `cache-loader` 缓存区域loader
+#### 1.4.2 `cache-loader` 缓存区域loader
 
 ```javascript
 // yarn add cache-loader -D 
@@ -569,7 +573,7 @@ const config = {
 
 ### 2、优化构建结果
 
-#### 2.1 构建结果分析 `[webpack-bundle-analyzer](https://link.juejin.cn/?target=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fwebpack-bundle-analyzer) `
+### 2.1 构建结果分析 `[webpack-bundle-analyzer](https://link.juejin.cn/?target=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fwebpack-bundle-analyzer) `
 
 ```javascript
 // yarn add webpack-bundle-analyzer -D
@@ -594,7 +598,7 @@ const config = {
   },
 ```
 
-#### 2.2 压缩CSS `[optimize-css-assets-webpack-plugin](https://link.juejin.cn/?target=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Foptimize-css-assets-webpack-plugin)`
+### 2.2 压缩CSS `[optimize-css-assets-webpack-plugin](https://link.juejin.cn/?target=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Foptimize-css-assets-webpack-plugin)`
 
 ```javascript
 // yarn add  optimize-css-assets-webpack-plugin -D
@@ -612,7 +616,7 @@ const config = {
 }
 ```
 
-#### 2.3 压缩JS `terser-webpack-plugin (内置)`
+### 2.3 压缩JS `terser-webpack-plugin (内置)`
 
 ```javascript
 const TerserPlugin = require('terser-webpack-plugin');
@@ -630,7 +634,7 @@ const config = {
 }
 ```
 
-#### 2.4 清除无用的CSS `[purgecss-webpack-plugin](https://link.juejin.cn/?target=https%3A%2F%2Fwww.purgecss.cn%2Fplugins%2Fwebpack.html%23%25E7%2594%25A8%25E6%25B3%2595) `
+### 2.4 清除无用的CSS `[purgecss-webpack-plugin](https://link.juejin.cn/?target=https%3A%2F%2Fwww.purgecss.cn%2Fplugins%2Fwebpack.html%23%25E7%2594%25A8%25E6%25B3%2595) `
 
 ```javascript
 // yarn add purgecss-webpack-plugin -D
@@ -656,7 +660,7 @@ const config = {
 
 ```
 
-#### 2.5 Tree-shaking
+### 2.5 Tree-shaking
 
 `Tree-shaking` 作用是剔除没有使用的代码，以降低包的体积
 

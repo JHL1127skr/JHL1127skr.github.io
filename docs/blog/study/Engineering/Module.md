@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # 模块化（Module）
 ---
 ### CommonJS与ES Module差异
@@ -18,7 +22,7 @@ module.exports={
 let { data } =require('./data')  
 ```
 
-#### 一、module.exports与exports的区别
+### 一、module.exports与exports的区别
 
 ::: tip
 无论使用 `exports` 暴露成员，或是 `module.exports` 暴露成员，最终暴露的结果，都是以 `module.exports` 所指向的对象为准
@@ -47,7 +51,7 @@ export let data ='data'
 import { data } from './data'
 ```
 
-#### 一、整体加载
+### 一、整体加载
 
 ```javascript
 export function fun1 (){}
@@ -60,7 +64,7 @@ xx.fun1()
 xx.fun2()
 ```
 
-#### 二、export default 命令 
+### 二、export default 命令 
 
 可以用任意名字引入default的导出
 
@@ -72,7 +76,7 @@ export default {}
 import xx from './data'
 ```
 
-#### 三、不同环境下
+### 三、不同环境下
 
 - **Node环境下**
 
@@ -85,7 +89,7 @@ import xx from './data'
 <script type="module">import xx from './xx'</script>
 ```
 
-#### 四、CommonJS 模块加载 ES6 模块
+### 四、CommonJS 模块加载 ES6 模块
 
 CommonJS 的`require()`命令不能加载 ES6 模块，会报错，只能使用`import()`这个方法加载。
 
@@ -100,7 +104,7 @@ CommonJS 的`require()`命令不能加载 ES6 模块，会报错，只能使用`
 上面代码可以在 CommonJS 模块中运行。
 require()不支持 ES6 模块的一个原因是，它是同步加载，而 ES6 模块内部可以使用顶层await命令，导致无法被同步加载。
 
-#### 四、ES6 模块加载 CommonJS 模块
+### 四、ES6 模块加载 CommonJS 模块
 
 ES6 模块的import命令可以加载 CommonJS 模块，但是只能整体加载，不能只加载单一的输出项。
 
@@ -118,4 +122,3 @@ import { method } from 'commonjs-package';
 import packageMain from 'commonjs-package';
 const { method } = packageMain;
 ```
-

@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # BFC
 ---
 ### BFC是什么

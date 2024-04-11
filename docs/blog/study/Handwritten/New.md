@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # New
 ---
 ```js
@@ -11,4 +15,19 @@ function New (){
   //判断构造函数的返回值并返回
   return typeof result === 'object' ? result : obj
 }
+
+
+关于最后一步判断返回值
+如果构造函数显式返回一个对象（且该对象不是 null）,则 new 表达式的结果就是这个对象
+
+function fn(arg){
+  this.value = arg;
+  // 显式返回一个对象
+  return { customProp: 'customValue' };
+} 
+
+let obj = new fn('some value') // 输出：{ customProp: 'customValue' } 
+//没有返回值时输出： { value: 'some value' }
+
+
 ```

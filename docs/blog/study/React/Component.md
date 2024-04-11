@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # 生命周期
 ---
 ::: tip 虚拟DOM：核心算法的基石
@@ -32,7 +36,7 @@
 
 ![图片](/blog/Component02.png)
 
-#### 一、新增了两个生命周期
+### 一、新增了两个生命周期
 ```jsx
 static getDerivedStateFromProps(nextProps,prevState){
   //static 静态方法 this为null
@@ -55,7 +59,7 @@ getSnapshotBeforeUpdate(){
 componentDidUpdate(prevProps,prevState,info){}
 ```
 1. 返回值作为DidUpdate第三个参数传入
-#### 二、删除了三个Will相关的生命周期
+### 二、删除了三个Will相关的生命周期
 **前置条件**:
 
 每触发一次组件的更新 ，react就会构建一颗新的虚拟DOM树，通过与上一次的虚拟DOM进行diff，来实现DOM定向更新。这个漫长且不可打段的递归更新过程，将会带来用户体验成的巨大风险。渲染过程一旦开始就会牢牢占用主线程，直到递归彻底完成。浏览器没有办法处理渲染之外的是事情，若渲染时间过长，没有办法处理用户交互，就会导致页面卡顿或卡死。
@@ -73,8 +77,5 @@ Fiber会将一个大的更新任务拆解为许多小任务，会使原本同步
 **总结**：
 
 React为了解决之前的漫长不可打断的同步渲染进程带来的风险，推出Filer架构，使渲染流程变成可打断的异步模式。在Fiber机制下，三个Will相关的生命周期处于可以被打断的render阶段，render阶段使允许暂停、终止、和重启的。所以为了防止生命周期多次被调用导致出现BUG，进而删除和引入新的生命周期，同时也确保了生命周期的行为更加纯粹、可控、可预测。
-#### 三、Fiber架构对生命周期的影响
+### 三、Fiber架构对生命周期的影响
 ![图片](/blog/Component03.png)
-
-
-

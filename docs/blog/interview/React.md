@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # React
 
 ### Redux工作流程
@@ -78,4 +82,3 @@ const [isPending, startTransition] = useTransition()
 const deferredValue = useDeferredValue(value)
 // 将该值转成 低优先处理。（本质同上，一个包装方法，一个包装值
 ```
-	
