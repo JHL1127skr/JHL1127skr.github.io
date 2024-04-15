@@ -3,23 +3,56 @@ outline: deep
 ---
 
 # React 状态管理
---- 
-### 一、基本工作原理
+
+---
+
+### Context
+
+![](/blog/Context.png)
+
+#### 具体使用
+
+```jsx
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
+
+const conutContext = createContext(1); // 初始值
+
+const MyconutContext = ({ children }) => {
+	return <conutContext.Provider value={2}>{children}</conutContext.Provider>;
+};
+const App = () => {
+	return (
+		<div>
+			<MyconutContext>
+				<Son></Son>
+			</MyconutContext>
+		</div>
+	);
+};
+const Son = () => {
+	const conut = useContext(conutContext);
+	return <div>{count}</div>;
+};
+```
+
+### Redux
+
+#### 一、基本工作原理
 
 通过 `dispatch` 派发一个 `action`，通过对应的 `reducer` 改变 `store`
 
-### 二、主要内容
+#### 二、主要内容
 
 - `store`：描述应用的状态，存放对象或数组之类的值
-- `reducer(state, aciton)`：基于旧的state和action计算出新的state
-- `action`：描述如果操作state
-- `dispatch(action)`：接受action，用来改变state
+- `reducer(state, aciton)`：基于旧的 state 和 action 计算出新的 state
+- `action`：描述如果操作 state
+- `dispatch(action)`：接受 action，用来改变 state
 
-### 三、`react-redux`
+#### 三、`react-redux`
 
-将**Redux中创建的store与组件绑定到一起，变成组件的状态并控制渲染。并导出`Provider`、`content`，`useDispatch`，`useSelect`等API
+将\*\*Redux 中创建的 store 与组件绑定到一起，变成组件的状态并控制渲染。并导出`Provider`、`content`，`useDispatch`，`useSelect`等 API
 
-### 四、具体使用
+#### 四、具体使用
 
 ```jsx
 import { ceateStore, combineReducers } from 'redux'
@@ -30,7 +63,7 @@ const storeA =(state:{},action){
     case 'xx'
       return {...state,xx:action.payload.xx}
     default
-      return state 
+      return state
   }
 }
 
@@ -64,15 +97,15 @@ export const App = (props) => {
 }
 ```
 
-### 五、异步操作中间键`react-thunk`
+#### 五、异步操作中间键`react-thunk`
 
 可以看到 `dispatch()`可以传入一个函数，且函数的行参数是`dispatch`。
 
 ```jsx
-import { ceateStore, combineReducers,applyMiddleware } from 'redux'
-import thunk from 'react-thunk'
+import { ceateStore, combineReducers, applyMiddleware } from "redux";
+import thunk from "react-thunk";
 
-const store = createStore(rootReducer,applyMiddleware(thunk))
+const store = createStore(rootReducer, applyMiddleware(thunk));
 ```
 
 ```jsx
