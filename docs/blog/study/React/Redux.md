@@ -50,7 +50,7 @@ const Son = () => {
 
 #### 三、`react-redux`
 
-将\*\*Redux 中创建的 store 与组件绑定到一起，变成组件的状态并控制渲染。并导出`Provider`、`content`，`useDispatch`，`useSelect`等 API
+将 Redux 中创建的 store 与组件绑定到一起，变成组件的状态并控制渲染。并导出`Provider`、`content`，`useDispatch`，`useSelect`等 API
 
 #### 四、具体使用
 
@@ -126,4 +126,83 @@ export const App = (props) => {
   return <div></div>
 }
 
+```
+
+### Zustand
+
+#### 基本使用
+
+```jsx
+import { create } from "zustand";
+
+interface UserInfo {
+	name: string;
+	age: number;
+}
+
+interface Action {
+	increment: () => void;
+	UpdateName: (name: string) => void;
+}
+interface Store {
+	count: number;
+	userInfo: UserInfo;
+}
+
+export const useStore = create<Action & Store>((set) => ({
+	count: 1, 
+	userInfo: {
+		name: "小姜",
+		age: 24,
+	},
+	increment: () => set((state) => ({ count: state.count + 1 })),
+	UpdateName: (name) => set((state) => ({ userInfo: { ...state.userInfo, name } })),
+}));
+```
+```jsx
+import { useStore } from './store'
+
+const count = useStore((state) => satet.count )
+const { count, userInfo } = useStore()
+
+
+```
+#### 避免重复渲染 `useShallow`
+```jsx
+const A = () => {
+	const { num, addNum } = useStore();
+	console.log("A组件渲染");
+	return (
+		<div>
+			<div>{num}</div>
+			<button onClick={addNum}>add</button>
+		</div>
+	);
+};
+
+const B = () => {
+	const { count, increment } = useStore(useShallow(state=>({
+		count:state.count,
+		increment:state.increment
+	})));
+	console.log("B组件渲染");
+	return (
+		<div>
+			<div>{count}</div>
+			<button onClick={increment}>add</button>
+		</div>
+	);
+};
+```
+#### 持久化 `persist`
+```jsx
+import { persist } from "zustand/middleware";
+export const useStore = create(
+	persist<Action & Store>(
+		(set) => ({
+			//...
+		}),
+		{ name: "config" },
+	),
+);
 ```

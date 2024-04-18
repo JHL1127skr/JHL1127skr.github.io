@@ -13,6 +13,7 @@ module.exports = {
 				{ text: "CSS 常见选择器", link: "/blog/study/CSS/CssSelector.md" },
 				{ text: "Flex 布局", link: "/blog/study/CSS/Flex.md" },
 				{ text: "BFC", link: "/blog/study/CSS/BFC.md" },
+				{ text: "网页中的各种距离", link: "/blog/study/CSS/Distance.md" },
 			],
 		},
 		{
@@ -145,7 +146,7 @@ module.exports = {
 		{
 			text: "二叉树",
 			collapsed: false,
-			items: [{ text: "结构", link: "/blog/algorithm/BinaryTree/Structure"}],
+			items: [{ text: "结构", link: "/blog/algorithm/BinaryTree/Structure" }],
 		},
 	],
 };
