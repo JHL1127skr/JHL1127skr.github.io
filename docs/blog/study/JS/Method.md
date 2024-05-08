@@ -46,6 +46,9 @@ outline: deep
 "".charCodeAt(index); // 返回对饮索引下内容的ASCII码
 "".indexOf(ele); // 查询某个元素第一次出现的索引
 "".lastIndexOf(ele); //查询某个元素最后一次出现的索引
+"".includes(ele); // 判断字符串与子串的包含关系 返回值：布尔值
+"".startsWith(ele); // 判断字符串是否以某个元素开头 返回值：布尔值
+"".endsWith(ele); // 判断字符串是否以某个元素结尾 返回值：布尔值
 "".search(ele / reg); //查询字符串，可以传入字符串或者正则 返回值：查到返回下标，查不到返回 -1、
 "".substring(开始位置, 结束位置(不包括)); // 截取字符串
 "".substr(开始位置, 截取几个); //截取字符串

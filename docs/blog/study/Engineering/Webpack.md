@@ -2,24 +2,22 @@
 outline: deep
 ---
 
----
-sidebarDepth: 2
----
 # Webpack
+
 ## 一、基础
 
 ### 1、简单配置
 
-### 1.1目录结构
+### 1.1 目录结构
 
 ```javascript
 webpack_work
 ├─ dist //打包之后的文件夹
 ├─ src //入口路径
-├─ .browserslistrc 
+├─ .browserslistrc
 ├─ postcss.config.js
 ├─ .babelrc.js  //配置babel
-├─ webpack.config.js 
+├─ webpack.config.js
 └─ package.json
 ```
 
@@ -44,16 +42,16 @@ const config = {
   	resolve:{
       alias:{}
     }
-    module: { // loader      
+    module: { // loader
         rules: [
            ...
         ]
     },
     plugins: [ // plugin
-        ...    
+        ...
     ],
     devServer: {// 启动
-        ...   
+        ...
     },
 };
 module.exports = (env, argv) => {
@@ -72,12 +70,13 @@ module.exports = (env, argv) => {
 ```javascript
 // yarn add  css-loader -D
 
-rules: [ // 转换规则
-    {
-        test:/\.css$/, //匹配所有的 css 文件
-        use: 'css-loader' // use: 对应的 Loader 名称
-    }
-]
+rules: [
+	// 转换规则
+	{
+		test: /\.css$/, //匹配所有的 css 文件
+		use: "css-loader", // use: 对应的 Loader 名称
+	},
+];
 ```
 
 #### 1.3.2 引入 CSS ：`style-loader`
@@ -92,11 +91,11 @@ rules: [
 }
 ```
 
-#### 1.3.3 CSS兼容性：`postcss-loader、postcss、postcss-preset-env`
+#### 1.3.3 CSS 兼容性：`postcss-loader、postcss、postcss-preset-env`
 
 ```javascript
 // yarn add postcss postcss-loader postcss-preset-env -D
- 
+
  rules: [
       {
         test: /\.css$/, //匹配所有的 css 文件
@@ -109,8 +108,8 @@ rules: [
 ```javascript
 // postcss.config.js
 module.exports = {
-  plugins: [require('postcss-preset-env')]
-}
+	plugins: [require("postcss-preset-env")],
+};
 ```
 
 创建 postcss-preset-env 配置文件 `.browserslistrc`
@@ -122,17 +121,17 @@ last 2 versions # 回退两个浏览器版本
 IE 10 # 兼容IE 10
 ```
 
-#### 1.3.4 引入sass `sass-loader node-sass`
+#### 1.3.4 引入 sass `sass-loader node-sass`
 
 ```javascript
 // yarn add sass-loader node-sass -D
 
 rules: [
-    {
-         test: /\.(s[ac]|c)ss$/i, //匹配所有的 sass/scss/css 文件   
-         use:['style-loader', 'css-loader','postcss-loader', 'sass-loader', ] 
-    }
-]
+	{
+		test: /\.(s[ac]|c)ss$/i, //匹配所有的 sass/scss/css 文件
+		use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
+	},
+];
 ```
 
 #### 1.3.5 JS 兼容性（Babel）`babel-loader @babel/core @babel/preset-env`
@@ -141,22 +140,22 @@ rules: [
 // yarn add babel-loader @babel/core @babel/preset-env -D
 
 module.exports = {
-  presets: [
-    [
-      "@babel/preset-env",
-      {
-        // useBuiltIns: false 默认值，无视浏览器兼容配置，引入所有 polyfill
-        // useBuiltIns: entry 根据配置的浏览器兼容，引入浏览器不兼容的 polyfill
-        // useBuiltIns: usage 会根据配置的浏览器兼容，以及你代码中用到的 API 来进行 polyfill，实现了按需添加
-        useBuiltIns: "entry",
-        corejs: "3.9.1", // 是 core-js 版本号
-        targets: {
-          chrome: "58",
-          ie: "11",
-        },
-      },
-    ],
-  ],
+	presets: [
+		[
+			"@babel/preset-env",
+			{
+				// useBuiltIns: false 默认值，无视浏览器兼容配置，引入所有 polyfill
+				// useBuiltIns: entry 根据配置的浏览器兼容，引入浏览器不兼容的 polyfill
+				// useBuiltIns: usage 会根据配置的浏览器兼容，以及你代码中用到的 API 来进行 polyfill，实现了按需添加
+				useBuiltIns: "entry",
+				corejs: "3.9.1", // 是 core-js 版本号
+				targets: {
+					chrome: "58",
+					ie: "11",
+				},
+			},
+		],
+	],
 };
 ```
 
@@ -166,24 +165,26 @@ module.exports = {
 
 ```javascript
 //yarn add html-webpack-plugin -D
- 
- const HtmlWebpackPlugin = require('html-webpack-plugin')
- plugins:[ // 配置插件
-    new HtmlWebpackPlugin({
-      template: './src/index.html'
-    })
-  ]
+
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+plugins: [
+	// 配置插件
+	new HtmlWebpackPlugin({
+		template: "./src/index.html",
+	}),
+];
 ```
 
 #### 1.4.2 目录清空：`clean-webpack-plugin`
 
 ```javascript
- //yarn add clean-webpack-plugin -D
+//yarn add clean-webpack-plugin -D
 
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-  plugins:[ // 配置插件
-    new CleanWebpackPlugin() // 引入插件
-  ]
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+plugins: [
+	// 配置插件
+	new CleanWebpackPlugin(), // 引入插件
+];
 ```
 
 #### **1.4.3 分理样式文件 ：**`mini-css-extract-plugin`
@@ -191,31 +192,36 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 ```javascript
 // yarn add mini-css-extract-plugin -D
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-rules: [{
-     test: /\.(s[ac]|c)ss$/i, //匹配所有的 sass/scss/css 文件
-     use: [
-         //'style-loader', 
-          MiniCssExtractPlugin.loader, // 添加 loader 
-           'css-loader','postcss-loader','sass-loader', 
-     ]
-}]
+rules: [
+	{
+		test: /\.(s[ac]|c)ss$/i, //匹配所有的 sass/scss/css 文件
+		use: [
+			//'style-loader',
+			MiniCssExtractPlugin.loader, // 添加 loader
+			"css-loader",
+			"postcss-loader",
+			"sass-loader",
+		],
+	},
+];
 
-plugins:[
-    new MiniCssExtractPlugin({ // 添加插件
-      filename: '[name].[hash:8].css'
-    }),
-]
+plugins: [
+	new MiniCssExtractPlugin({
+		// 添加插件
+		filename: "[name].[hash:8].css",
+	}),
+];
 ```
 
 #### 1.4.4 图片和字体文件 `file-loader、url-loader、img-loader`
 
-| ** Loader** | **说明**                                                     |
-| ----------- | ------------------------------------------------------------ |
-| file-loader | 解决图片引入问题，并将图片 copy 到指定目录，默认为 dist      |
+| ** Loader** | **说明**                                                                                                                    |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------- |
+| file-loader | 解决图片引入问题，并将图片 copy 到指定目录，默认为 dist                                                                     |
 | url-loader  | 解依赖 file-loader，当图片小于 limit 值的时候，会将图片转为 base64 编码，大于 limit 值的时候依然是使用 file-loader 进行拷贝 |
-| img-loader  | 压缩图片                                                     |
+| img-loader  | 压缩图片                                                                                                                    |
 
 ```javascript
 // yarn add file-loader -D
@@ -223,26 +229,28 @@ plugins:[
 rules: [{
     test:/\.(jpe?g|png|gif)$/i, // 匹配图片文件
     use:[
-        'file-loader' // 使用 file-loader     
+        'file-loader' // 使用 file-loader
     ]
 ```
 
 ```javascript
 // yarn add url-loader -D
 
-rules:[{
-     test: /\.(jpe?g|png|gif)$/i,
-     use:[
-          {
-            loader: 'url-loader',
-            options: {
-              name: '[name][hash:8].[ext]',
-              // 文件小于 50k 会转换为 base64，大于则拷贝文件
-              limit: 50 * 1024
-            }
-          }
-        ]
-}]
+rules: [
+	{
+		test: /\.(jpe?g|png|gif)$/i,
+		use: [
+			{
+				loader: "url-loader",
+				options: {
+					name: "[name][hash:8].[ext]",
+					// 文件小于 50k 会转换为 base64，大于则拷贝文件
+					limit: 50 * 1024,
+				},
+			},
+		],
+	},
+];
 ```
 
 ### 1.5 环境区分
@@ -257,7 +265,7 @@ yarn add cross-env -D
 
 ```json
 "scripts": {
-  "dev": "cross-env NODE_ENV=dev webpack serve --mode development", 
+  "dev": "cross-env NODE_ENV=dev webpack serve --mode development",
   "test": "cross-env NODE_ENV=test webpack --mode production",
   "build": "cross-env NODE_ENV=prod webpack --mode production"
 },
@@ -289,16 +297,16 @@ yarn add webpack-dev-server -D
 
 ```javascript
 const config = {
-  // ...
-  devServer: {
-    static: { directory: path.join(__dirname, "public") }, // 静态文件目录
-    compress: true, //是否启动压缩 gzip
-    compress: true, //是否启动压缩 gzip
-    port: 8080, // 端口号
-    // open:true  // 是否自动打开浏览器
-  },
- // ...
-}
+	// ...
+	devServer: {
+		static: { directory: path.join(__dirname, "public") }, // 静态文件目录
+		compress: true, //是否启动压缩 gzip
+		compress: true, //是否启动压缩 gzip
+		port: 8080, // 端口号
+		// open:true  // 是否自动打开浏览器
+	},
+	// ...
+};
 ```
 
 ### 1.7 资源模块的使用
@@ -313,35 +321,35 @@ const config = {
 4. asset 会根据文件大小来选择使用哪种类型，当文件小于 8 KB（默认） 的时候会使用 asset/inline，否则会使用 asset/resource
 
 ```javascript
-rules:[
-    {
-        test:/\.(jpe?g|png|gif)$/i,
-        type:'asset',
-        generator:{
-            // 输出文件位置以及文件名
-            // [ext] 自带 "." 这个与 url-loader 配置不同  
-             filename: "[name][hash:8][ext]"   
-        },
-        parser: {
-           dataUrlCondition: {
-                maxSize: 50 * 1024 //超过50kb不转 base64
-              }
-           }
-    },
-    {
-        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
-        type: 'asset',
-        generator: {
-          // 输出文件位置以及文件名
-          filename: "[name][hash:8][ext]"
-        },
-        parser: {
-          dataUrlCondition: {
-            maxSize: 10 * 1024 // 超过100kb不转 base64
-          }
-        }    
-    }
-]
+rules: [
+	{
+		test: /\.(jpe?g|png|gif)$/i,
+		type: "asset",
+		generator: {
+			// 输出文件位置以及文件名
+			// [ext] 自带 "." 这个与 url-loader 配置不同
+			filename: "[name][hash:8][ext]",
+		},
+		parser: {
+			dataUrlCondition: {
+				maxSize: 50 * 1024, //超过50kb不转 base64
+			},
+		},
+	},
+	{
+		test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
+		type: "asset",
+		generator: {
+			// 输出文件位置以及文件名
+			filename: "[name][hash:8][ext]",
+		},
+		parser: {
+			dataUrlCondition: {
+				maxSize: 10 * 1024, // 超过100kb不转 base64
+			},
+		},
+	},
+];
 ```
 
 ### 2.SourceMap 配置选择
@@ -352,7 +360,7 @@ SourceMap 是一种映射关系，当项目运行后，如果出现错误，我�
 const config = {
 	// ...
   devtool: 'source-map',
-  module: { 
+  module: {
      // ...
   }
   // ...
@@ -373,7 +381,7 @@ const config = {
 ### 3.三种 hash 值
 
 Webpack 文件指纹策略是将文件名后面加上 hash 值。例如我们在基础配置中用到的`filename: "[name][hash:8][ext]"`
-这里里面 `[]`包起来的，就叫占位符，它们都是什么意思呢？请看下面这个表 
+这里里面 `[]`包起来的，就叫占位符，它们都是什么意思呢？请看下面这个表
 
 | **占位符**  | **解释**                   |
 | ----------- | -------------------------- |
@@ -383,7 +391,7 @@ Webpack 文件指纹策略是将文件名后面加上 hash 值。例如我们在
 | folder      | 文件所在文件夹             |
 | hash        | 每次构建生成的唯一 hash 值 |
 | chunkhash   | 根据 chunk 生成 hash 值    |
-| contenthash | 根据文件内容生成hash 值    |
+| contenthash | 根据文件内容生成 hash 值   |
 
 表格里面的 hash、chunkhash、contenthash 你可能还是不清楚差别在哪
 
@@ -448,11 +456,11 @@ function resolve(dir){
 配置完成后，在项目中
 
 ```javascript
-// 使用 src 别名 ~ 
-import '~/fonts/iconfont.css'
+// 使用 src 别名 ~
+import "~/fonts/iconfont.css";
 
-// 使用 src 别名 @ 
-import '@/fonts/iconfont.css'
+// 使用 src 别名 @
+import "@/fonts/iconfont.css";
 
 // 使用 components 别名
 import footer from "components/footer";
@@ -462,17 +470,17 @@ import footer from "components/footer";
 
 ```javascript
 const config = {
-  //...
-  resolve: {
-    extensions: ['.js', '.json', '.wasm'],
-  },
+	//...
+	resolve: {
+		extensions: [".js", ".json", ".wasm"],
+	},
 };
 ```
 
 如果用户引入模块时不带扩展名，例如
 
 ```javascript
-import file from '../path/to/file';
+import file from "../path/to/file";
 ```
 
 那么 webpack 就会按照 extensions 配置的数组从左到右的顺序去尝试解析模块
@@ -485,10 +493,10 @@ import file from '../path/to/file';
 
 ```javascript
 const config = {
-  //...
-  resolve: {
-    extensions: ['.ts', '...'], 
-  },
+	//...
+	resolve: {
+		extensions: [".ts", "..."],
+	},
 };
 ```
 
@@ -500,10 +508,10 @@ const config = {
 
 ```javascript
 const config = {
-  //...
-  resolve: {
-     modules: [resolve('src'), 'node_modules'],
-  },
+	//...
+	resolve: {
+		modules: [resolve("src"), "node_modules"],
+	},
 };
 ```
 
@@ -515,7 +523,7 @@ const config = {
 ```javascript
 const config = {
   //...
-  module: { 
+  module: {
     noParse: /jquery|lodash/,
     rules:[...]
   }
@@ -523,52 +531,52 @@ const config = {
 };
 ```
 
-### 1.4利用缓存
+### 1.4 利用缓存
 
 #### 1.4.1 babel-loader 开启缓存
 
 ```javascript
 const config = {
- module: { 
-    rules: [
-      {
-        test: /\.js$/i,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              cacheDirectory: true // 启用缓存
-            }
-          },
-        ]
-      },
-    ]
-  }
-}
+	module: {
+		rules: [
+			{
+				test: /\.js$/i,
+				use: [
+					{
+						loader: "babel-loader",
+						options: {
+							cacheDirectory: true, // 启用缓存
+						},
+					},
+				],
+			},
+		],
+	},
+};
 ```
 
-#### 1.4.2 `cache-loader` 缓存区域loader
+#### 1.4.2 `cache-loader` 缓存区域 loader
 
 ```javascript
-// yarn add cache-loader -D 
+// yarn add cache-loader -D
 const config = {
- module: { 
-    rules: [
-      {
-        test: /\.(s[ac]|c)ss$/i, //匹配所有的 sass/scss/css 文件
-        use: [
-          // 'style-loader',
-          MiniCssExtractPlugin.loader,
-          'cache-loader', // 获取前面 loader 转换的结果
-          'css-loader',
-          'postcss-loader',
-          'sass-loader', 
-        ]
-      }, 
-      // ...
-    ]
-  }
-}
+	module: {
+		rules: [
+			{
+				test: /\.(s[ac]|c)ss$/i, //匹配所有的 sass/scss/css 文件
+				use: [
+					// 'style-loader',
+					MiniCssExtractPlugin.loader,
+					"cache-loader", // 获取前面 loader 转换的结果
+					"css-loader",
+					"postcss-loader",
+					"sass-loader",
+				],
+			},
+			// ...
+		],
+	},
+};
 ```
 
 ### 2、优化构建结果
@@ -577,18 +585,18 @@ const config = {
 
 ```javascript
 // yarn add webpack-bundle-analyzer -D
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 const config = {
-  // ...
-  plugins:[ 
-    // ...
-    // 配置插件 
-    new BundleAnalyzerPlugin({
-      // analyzerMode: 'disabled',  // 不启动展示打包报告的http服务器
-      // generateStatsFile: true, // 是否生成stats.json文件
-    })
-  ],
+	// ...
+	plugins: [
+		// ...
+		// 配置插件
+		new BundleAnalyzerPlugin({
+			// analyzerMode: 'disabled',  // 不启动展示打包报告的http服务器
+			// generateStatsFile: true, // 是否生成stats.json文件
+		}),
+	],
 };
 ```
 
@@ -598,66 +606,66 @@ const config = {
   },
 ```
 
-### 2.2 压缩CSS `[optimize-css-assets-webpack-plugin](https://link.juejin.cn/?target=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Foptimize-css-assets-webpack-plugin)`
+### 2.2 压缩 CSS `[optimize-css-assets-webpack-plugin](https://link.juejin.cn/?target=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Foptimize-css-assets-webpack-plugin)`
 
 ```javascript
 // yarn add  optimize-css-assets-webpack-plugin -D
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 const config = {
-  // ...
-  optimization: {
-    minimize: true,
-    minimizer: [
-      // 添加 css 压缩配置
-      new OptimizeCssAssetsPlugin({}),
-    ]
-  },
-}
+	// ...
+	optimization: {
+		minimize: true,
+		minimizer: [
+			// 添加 css 压缩配置
+			new OptimizeCssAssetsPlugin({}),
+		],
+	},
+};
 ```
 
-### 2.3 压缩JS `terser-webpack-plugin (内置)`
+### 2.3 压缩 JS `terser-webpack-plugin (内置)`
 
 ```javascript
-const TerserPlugin = require('terser-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 const config = {
-  // ...
-  optimization: {
-    minimize: true, // 开启最小化
-    minimizer: [
-      // ...
-      new TerserPlugin({})
-    ]
-  },
-  // ...
-}
+	// ...
+	optimization: {
+		minimize: true, // 开启最小化
+		minimizer: [
+			// ...
+			new TerserPlugin({}),
+		],
+	},
+	// ...
+};
 ```
 
-### 2.4 清除无用的CSS `[purgecss-webpack-plugin](https://link.juejin.cn/?target=https%3A%2F%2Fwww.purgecss.cn%2Fplugins%2Fwebpack.html%23%25E7%2594%25A8%25E6%25B3%2595) `
+### 2.4 清除无用的 CSS `[purgecss-webpack-plugin](https://link.juejin.cn/?target=https%3A%2F%2Fwww.purgecss.cn%2Fplugins%2Fwebpack.html%23%25E7%2594%25A8%25E6%25B3%2595) `
 
 ```javascript
 // yarn add purgecss-webpack-plugin -D
-const PurgecssWebpackPlugin = require('purgecss-webpack-plugin')
-const glob = require('glob'); // 文件匹配模式
+const PurgecssWebpackPlugin = require("purgecss-webpack-plugin");
+const glob = require("glob"); // 文件匹配模式
 
-function resolve(dir){
-  return path.join(__dirname, dir);
+function resolve(dir) {
+	return path.join(__dirname, dir);
 }
 
 const PATHS = {
-  src: resolve('src')
-}
+	src: resolve("src"),
+};
 
 const config = {
-  plugins:[ // 配置插件
-    // ...
-    new PurgecssPlugin({
-      paths: glob.sync(`${PATHS.src}/**/*`, {nodir: true})
-    }),
-  ]
-}
-
+	plugins: [
+		// 配置插件
+		// ...
+		new PurgecssPlugin({
+			paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+		}),
+	],
+};
 ```
 
 ### 2.5 Tree-shaking
@@ -668,21 +676,21 @@ const config = {
 
 ```javascript
 module.exports = {
-    presets: [
-        [
-            "@babel/preset-env",
-            {
-                module: false,
-                corejs: "3.9.1", // 是 core-js 版本号
-                targets: {
-                    chrome: "58",
-                    ie: "11",
-                },
-            },
-        ],
-    ],
-    options: {
-        cacheDirectory: true, // 启用缓存
-    },
+	presets: [
+		[
+			"@babel/preset-env",
+			{
+				module: false,
+				corejs: "3.9.1", // 是 core-js 版本号
+				targets: {
+					chrome: "58",
+					ie: "11",
+				},
+			},
+		],
+	],
+	options: {
+		cacheDirectory: true, // 启用缓存
+	},
 };
 ```

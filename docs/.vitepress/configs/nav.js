@@ -51,7 +51,7 @@ module.exports = [
 			},
 			{
 				text: "clip-path生成器",
-				link: "https://www.html.cn/tool/css-clip-path",
+				link: "https://bennettfeely.com/clippy/",
 			},
 			{
 				text: "SASS在线转CSS",
