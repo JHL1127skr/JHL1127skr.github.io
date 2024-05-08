@@ -6,6 +6,18 @@ outline: deep
 
 ---
 
+### 标签页可见或隐藏
+
+```js
+// 当其选项卡的内容变得可见或被隐藏时，会在 document 上触发 visibilitychange 事件。
+document.addEventListener("visibilitychange", () => {
+	if (document.visibilityState === "visible") {
+	} //显示
+	if (document.visibilityState === "hidden") {
+	} //隐藏
+});
+```
+
 ### reduce 小技巧 实现 filter.map
 
 ```js

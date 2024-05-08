@@ -7,7 +7,7 @@ outline: deep
 ### 在 npm 的安装命令中-D、-S、--save、--save-dev 是什么意思
 
 - `-S 或 --save`：包信息会添加在 `dependencies` 中，意味着该包不仅在开发环境中需要，而且在生产环境中也是必不可少的
-- ` -D 或 --save-dev`：包信息会添加在 `devDependencies` 中，这类包是项目开发过程中使用的工具等，`npm install` 是不会安装该列表中的包
+- ` -D 或 --save-dev`：包信息会添加在 `devDependencies` 中，这类包是项目开发过程中使用的工具等。打包时不会加载改列表的包
 
 ### 浏览器渲染流程
 
