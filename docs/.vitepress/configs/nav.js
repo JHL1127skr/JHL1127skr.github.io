@@ -61,6 +61,10 @@ module.exports = [
 				text: "EventLoop 可视化",
 				link: "http://www.jsv9000.app/",
 			},
+			{
+				text: "证件照换底色",
+				link: "https://id-photo.cn/color/",
+			},
 		],
 	},
 	{
