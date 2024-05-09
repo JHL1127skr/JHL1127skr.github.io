@@ -8,16 +8,19 @@ outline: deep
 
 ### 虚拟 DOM（Virtual DOM）
 
-### 一、什么是虚拟 DOM
+#### 一、什么是虚拟 DOM
 
+<div class="tip custom-block" style="padding-top: 8px">
 本质是 JS 跟 DOM 的一个映射缓存，形态上表现为一个能够描述 DOM 结构及其属性信息的 JS 对象
+</div>
+
 ![](/blog/Diff01.png)
 
 #### 二、虚拟 DOM 的价值到底是什么（解决了什么问题）
 
-1、研发体验/研发效率的问题<br/>
-2、跨平台多端开发 同一套虚拟 DOM 可以渲染在不同的载体<br/>
-3、“批量更新”
+1. 研发体验/研发效率的提升<br/>
+2. 跨平台多端开发 同一套虚拟 DOM 可以渲染在不同的载体<br/>
+3. “批量更新”
 
 ### Diff 算法
 
@@ -25,8 +28,8 @@ outline: deep
 
 > **算法的核心就是复用节点**
 
-在 v16 之前:React 通过递归直接生成虚拟 DOM，setState 触发重新渲染，对比生成新旧虚拟 DOM，对比差异渲染真实的 DOM<br/>
-在 v16 之后:为了优化性能，先将虚拟 DOM 转化为 Fiber，也就是将树转换成链表，然后再渲染，整体渲染流程分成了两个阶段<br/>
+在 v16 之前：React 通过递归直接生成虚拟 DOM，setState 触发重新渲染，对比生成新旧虚拟 DOM，对比差异渲染真实的 DOM<br/>
+在 v16 之后：为了优化性能，先将虚拟 DOM 转化为 Fiber，也就是**将树转换成链表**，然后再渲染，整体渲染流程分成了两个阶段<br/>
 
 render ： 从虚拟 DOM 转换成 Fiber，并且对需要 dom 操作的节点打上 effectTag 的标记<br/>
 commit：对有 effectTag 标记的 fiber 节点进行 dom 操作，并执行所有的 effect 副作用函数<br/>

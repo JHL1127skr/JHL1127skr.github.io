@@ -2,12 +2,12 @@ module.exports = {
 	"/blog/study": [
 		// {
 		// 	text: "HTML",
-		// 	collapsed: false,
+		// 	collapsed: true,
 		// 	items: [],
 		// },
 		{
 			text: "CSS",
-			collapsed: false,
+			collapsed: true,
 			items: [
 				{ text: "CSS 优先级", link: "/blog/study/CSS/CssPriority.md" },
 				{ text: "CSS 常见选择器", link: "/blog/study/CSS/CssSelector.md" },
@@ -18,7 +18,7 @@ module.exports = {
 		},
 		{
 			text: "JavaScript",
-			collapsed: false,
+			collapsed: true,
 			items: [
 				{ text: "数组字符串常用方法", link: "/blog/study/JS/Method.md" },
 				{ text: "数据类型及判断数据类型的方法", link: "/blog/study/JS/DataType.md" },
@@ -31,7 +31,7 @@ module.exports = {
 		},
 		{
 			text: "React",
-			collapsed: false,
+			collapsed: true,
 			items: [
 				{ text: "JSX如何变成DOM", link: "/blog/study/React/JSX.md" },
 				{ text: "生命周期", link: "/blog/study/React/Component.md" },
@@ -46,7 +46,7 @@ module.exports = {
 		},
 		{
 			text: "Vue3",
-			collapsed: false,
+			collapsed: true,
 			items: [
 				{ text: "基础用法", link: "/blog/study/Vue3/Base.md" },
 				{ text: "CSS 特性", link: "/blog/study/Vue3/Css.md" },
@@ -56,7 +56,7 @@ module.exports = {
 		},
 		{
 			text: "HTTP",
-			collapsed: false,
+			collapsed: true,
 			items: [
 				{ text: "HTTP与HTTPS", link: "/blog/study/HTTP/HTTP.md" },
 				{ text: "HTTP缓存", link: "/blog/study/HTTP/HTTPCache.md" },
@@ -64,7 +64,7 @@ module.exports = {
 		},
 		{
 			text: "浏览器相关",
-			collapsed: false,
+			collapsed: true,
 			items: [
 				{ text: "从输入URL到页面加载出来发生了什么", link: "/blog/study/Browser/URL.md" },
 				{ text: "垃圾回收机制", link: "/blog/study/Browser/GarbageCollection.md" },
@@ -73,7 +73,7 @@ module.exports = {
 		},
 		{
 			text: "工程化",
-			collapsed: false,
+			collapsed: true,
 			items: [
 				{ text: "npm/yarn/pnpm", link: "/blog/study/Engineering/Npm&Yarn&Pnpm.md" },
 				{ text: "npm run xxx 发生了什么", link: "/blog/study/Engineering/Npmrunxxx.md" },
@@ -83,7 +83,7 @@ module.exports = {
 		},
 		{
 			text: "手撕",
-			collapsed: false,
+			collapsed: true,
 			items: [
 				{ text: "new", link: "/blog/study/Handwritten/New.md" },
 				{ text: "call/apply/bind", link: "/blog/study/Handwritten/Call&apply&bind.md" },
