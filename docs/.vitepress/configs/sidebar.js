@@ -149,4 +149,14 @@ module.exports = {
 			items: [{ text: "结构", link: "/blog/algorithm/BinaryTree/Structure" }],
 		},
 	],
+	"/blog/animation": [
+		{
+			text: "动画",
+			collapsed: false,
+			items: [
+				{ text: "主题切换过渡动画", link: "/blog/animation/transition.md" },
+				{ text: "笼中鸟视觉暂留", link: "/blog/animation/eyesight.md" },
+			],
+		},
+	],
 };

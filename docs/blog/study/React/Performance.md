@@ -6,9 +6,7 @@ outline: deep
 
 ---
 
-### 面试题
-
-问：React 有哪些性能优化的手段
+::: tip 问：React 有哪些性能优化的手段
 
 1. class 中 shouldComponentUpdate 与 pureComponent
 2. hooks 中 usememo、useCallback、React.memo()
@@ -16,6 +14,7 @@ outline: deep
 4. 避免使用匿名函数
 5. React.lazy 与 React.Supense
 6. 合理规划组件 将变(state,props,context)与不变相分离，减少组件渲染次数
+   :::
 
 ### 性能优化：React 内置 API
 

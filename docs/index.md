@@ -22,6 +22,9 @@ hero:
     - theme: alt
       text: 算法
       link: /blog/algorithm/Array/LeftAndRight
+    - theme: alt
+      text: 动画
+      link: /blog/animation/transition
 
 features:
   - title: 学习
@@ -32,4 +35,6 @@ features:
     details: 高频面试题与笔试题
   - title: 算法
     details: 一些简单的基础算法
+  - title: 动画
+    details: 一些基于 css 和 js 的动画效果
 ---
