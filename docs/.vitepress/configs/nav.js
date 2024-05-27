@@ -19,6 +19,10 @@ module.exports = [
 				text: "算法",
 				link: "/blog/algorithm/Array/LeftAndRight",
 			},
+			{
+				text: "动画",
+				link: "/blog/animation/transition",
+			},
 		],
 	},
 	{
