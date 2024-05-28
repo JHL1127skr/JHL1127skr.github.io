@@ -315,125 +315,114 @@
 动画是基于 `transform`、`perspective`属性进行的 3D 旋转，有意思点可能就是使动画呈现一个匀速加速的过程。用到了 `requestAnimationFrame` 和 `performance.now()`。
 
 <style module>
- .root{
+	.root{
 		width: 100%;
 		height: 50vh;
 		background-color: #ccc;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
 	}
-    #cover {
-				width: 200px;
-				height: 200px;
-				transition: all;
-				position: relative;
-                perspective: 800px;
-			}
-
-			.bird {
-				z-index: 1;
-			}
-
-			.cage {
-				display: flex;
-				flex-direction: column;
-			}
-
-			.bird,
-			.cage {
-				transition: all;
-				position: absolute;
-				border-radius: 50%;
-				backface-visibility: hidden;
-				background-color: #fff;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				font-size: 100px;
-			}
-
-			.base {
-				width: 120px;
-				height: 20px;
-				border: 4px solid #000;
-				border-radius: 2px;
-			}
-
-			.hook {
-				width: 20px;
-				height: 8px;
-				border: 4px solid #000;
-				transform: translateY(2px);
-				border-bottom: none;
-				border-bottom-left-radius: 0;
-				border-bottom-right-radius: 0;
-				position: relative;
-			}
-
-			.hook > div {
-				width: 30px;
-				height: 30px;
-				border: 4px solid #000;
-				border-radius: 50%;
-				border-left-color: transparent;
-				position: absolute;
-				top: 0;
-				left: 30%;
-				transform: translate(-50%, -100%) rotate(310deg);
-			}
-
-			.topCover {
-				width: 110px;
-				height: 60px;
-				overflow: hidden;
-				transform: translateY(1px);
-			}
-
-			.top {
-				width: 110px;
-				height: 110px;
-				border: 4px solid #000;
-				border-radius: 50%;
-				border-bottom-left-radius: 0;
-				border-bottom-right-radius: 0;
-				border-bottom: none;
-				position: relative;
-			}
-
-			.top > div {
-				position: absolute;
-				top: 0;
-				left: 50%;
-				transform: translate(-50%, -3px);
-				width: 39px;
-				height: 110px;
-				border: 4px solid #000;
-				border-radius: 50%;
-				border-bottom-left-radius: 0;
-				border-bottom-right-radius: 0;
-				border-bottom: none;
-			}
-
-			.area {
-				width: 110px;
-				height: 60px;
-				border: 4px solid #000;
-				border-radius: 2px;
-				border-bottom-left-radius: 0;
-				border-bottom-right-radius: 0;
-				border-bottom: none;
-				display: flex;
-				justify-content: space-evenly;
-			}
-
-			.area > div {
-				width: 4px;
-				height: 100%;
-				background-color: #000;
-			}
+	#cover {
+		width: 200px;
+		height: 200px;
+		transition: all;
+		position: relative;
+	    perspective: 800px;
+	}
+	.bird {
+		z-index: 1;
+	}
+	.cage {
+		display: flex;
+		flex-direction: column;
+	}
+	.bird,
+	.cage {
+		transition: all;
+		position: absolute;
+		border-radius: 50%;
+		backface-visibility: hidden;
+		background-color: #fff;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 100px;
+	}
+	.base {
+		width: 120px;
+		height: 20px;
+		border: 4px solid #000;
+		border-radius: 2px;
+	}
+	.hook {
+		width: 20px;
+		height: 8px;
+		border: 4px solid #000;
+		transform: translateY(2px);
+		border-bottom: none;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		position: relative;
+	}
+	.hook > div {
+		width: 30px;
+		height: 30px;
+		border: 4px solid #000;
+		border-radius: 50%;
+		border-left-color: transparent;
+		position: absolute;
+		top: 0;
+		left: 30%;
+		transform: translate(-50%, -100%) rotate(310deg);
+	}
+	.topCover {
+		width: 110px;
+		height: 60px;
+		overflow: hidden;
+		transform: translateY(1px);
+	}
+	.top {
+		width: 110px;
+		height: 110px;
+		border: 4px solid #000;
+		border-radius: 50%;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		border-bottom: none;
+		position: relative;
+	}
+	.top > div {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, -3px);
+		width: 39px;
+		height: 110px;
+		border: 4px solid #000;
+		border-radius: 50%;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		border-bottom: none;
+	}
+	.area {
+		width: 110px;
+		height: 60px;
+		border: 4px solid #000;
+		border-radius: 2px;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		border-bottom: none;
+		display: flex;
+		justify-content: space-evenly;
+	}
+	.area > div {
+		width: 4px;
+		height: 100%;
+		background-color: #000;
+	}
 </style>
